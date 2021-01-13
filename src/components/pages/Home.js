@@ -1,6 +1,7 @@
 import React from "react";
 import { fetchPrismicData } from "../../utils/prismicHelpers";
 import { RichText } from "prismic-reactjs";
+import "./Home.scss";
 
 function Home() {
   const [doc, setDocData] = React.useState(null);

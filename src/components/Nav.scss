@@ -1,0 +1,41 @@
+.navbar {
+  display: none;
+}
+
+.navbar,
+.navbar__mobile {
+  ul {
+    list-style: none;
+    padding: 20px 40px;
+  }
+  &__link a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+}
+
+.navbar__mobile {
+    position: relative;
+    display: inline-block;
+    &__content {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #1c1c1c;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+  .navbar__mobile {
+    display: none;
+  }
+  .navbar {
+    display: block;
+    background-color: #1c1c1c;
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+  }
+}

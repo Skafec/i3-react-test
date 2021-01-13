@@ -26,36 +26,36 @@ function Story() {
             />
           </div>
           <div className="story__left">
-            <p>
+            <div>
               { RichText.render(doc.data.main_content) }
-            </p>
+            </div>
             <div className="left__gallery">
               <div className="gallery__item">
                 <img
                   src={ doc.data.story_img_1.url }
                   alt={ doc.data.story_img_1.alt }
                 />
-                <p>
+                <div>
                   { RichText.render(doc.data.story_text_1) }
-                </p>
+                </div>
               </div>
               <div className="gallery__item">
                 <img
                   src={ doc.data.story_img_2.url }
                   alt={ doc.data.story_img_2.alt }
                 />
-                <p>
+                <div>
                   { RichText.render(doc.data.story_text_2) }
-                </p>
+                </div>
               </div>
               <div className="gallery__item">
                 <img
                   src={ doc.data.story_img_3.url }
                   alt={ doc.data.story_img_3.alt }
                 />
-                <p>
+                <div>
                   { RichText.render(doc.data.story_text_3) }
-                </p>
+                </div>
               </div>
             </div>
           </div>
