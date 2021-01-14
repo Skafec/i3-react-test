@@ -1,6 +1,8 @@
 import React from "react";
 import "./Nav.scss";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import Home from "./pages/Home";
 import Story from "./pages/Story";
 
@@ -54,29 +56,38 @@ function App() {
         </nav>
 
         <nav className="navbar__mobile" ref={container}>
-          <button onClick={openMobileMenu}>Audi Q5</button>
-          {isMobileNavOpen && (
-            <div className="navbar__mobile__content">
-              <ul>
-                <li className="navbar__link">
-                  <Link to="/" onClick={openMobileMenu}>
-                    Home
-                  </Link>
-                </li>
-                <li className="navbar__link">
-                  <Link to="/story" onClick={openMobileMenu}>
-                    Our Story
-                  </Link>
-                </li>
-                <li className="navbar__link">
-                  <Link to="/#">Users</Link>
-                </li>
-                <li className="navbar__link">
-                  <Link to="/#">Resources</Link>
-                </li>
-              </ul>
-            </div>
-          )}
+          <button onClick={openMobileMenu}>
+            Audi Q5
+            {!isMobileNavOpen ? (
+              <FontAwesomeIcon icon={faAngleDown} />
+            ) : (
+              <FontAwesomeIcon icon={faAngleUp} />
+            )}
+          </button>
+          <div
+            className={`navbar__mobile__content ${
+              isMobileNavOpen ? "animate" : ""
+            }`}
+          >
+            <ul>
+              <li className="navbar__link">
+                <Link to="/" onClick={openMobileMenu}>
+                  Home
+                </Link>
+              </li>
+              <li className="navbar__link">
+                <Link to="/story" onClick={openMobileMenu}>
+                  Our Story
+                </Link>
+              </li>
+              <li className="navbar__link">
+                <Link to="/#">Users</Link>
+              </li>
+              <li className="navbar__link">
+                <Link to="/#">Resources</Link>
+              </li>
+            </ul>
+          </div>
         </nav>
 
         <Switch>
