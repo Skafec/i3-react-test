@@ -70,20 +70,20 @@ function App() {
             }`}
           >
             <ul>
-              <li className="navbar__link">
+              <li className="navbar__mobile__link">
                 <Link to="/" onClick={openMobileMenu}>
                   Home
                 </Link>
               </li>
-              <li className="navbar__link">
+              <li className="navbar__mobile__link">
                 <Link to="/story" onClick={openMobileMenu}>
                   Our Story
                 </Link>
               </li>
-              <li className="navbar__link">
+              <li className="navbar__mobile__link">
                 <Link to="/#">Users</Link>
               </li>
-              <li className="navbar__link">
+              <li className="navbar__mobile__link">
                 <Link to="/#">Resources</Link>
               </li>
             </ul>

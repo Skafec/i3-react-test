@@ -2,6 +2,8 @@ import React from "react";
 import { fetchPrismicData } from "../../utils/prismicHelpers";
 import { RichText } from "prismic-reactjs";
 import "./Home.scss";
+import ImageSlider from "../ImageSlider";
+
 
 function Home() {
   const [doc, setDocData] = React.useState(null);
@@ -55,6 +57,9 @@ function Home() {
                   {RichText.asText(doc.data.slider_text_3)}
                 </p>
               </div>
+            </div>
+            <div className="home__slider">
+              <ImageSlider sliderData={doc.data}></ImageSlider>
             </div>
           </div>
         </div>
