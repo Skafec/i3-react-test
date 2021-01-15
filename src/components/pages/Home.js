@@ -19,6 +19,7 @@ function Home() {
         <div className="home">
           <div className="home__top">
             <div className="home__image">
+              <div className="home__overlay"></div>
               <img
                 src={doc.data.home_image.url}
                 alt={doc.data.home_image.alt}
