@@ -4,7 +4,6 @@ import { RichText } from "prismic-reactjs";
 import "./Home.scss";
 import ImageSlider from "../ImageSlider";
 
-
 function Home() {
   const [doc, setDocData] = React.useState(null);
 
@@ -36,27 +35,21 @@ function Home() {
                   src={doc.data.slider_img_1.url}
                   alt={doc.data.slider_img_1.alt}
                 />
-                <p>
-                  {RichText.asText(doc.data.slider_text_1)}
-                </p>
+                <p>{RichText.asText(doc.data.slider_text_1)}</p>
               </div>
               <div className="gallery__item">
                 <img
                   src={doc.data.slider_img_2.url}
                   alt={doc.data.slider_img_2.alt}
                 />
-                <p>
-                  {RichText.asText(doc.data.slider_text_2)}
-                </p>
+                <p>{RichText.asText(doc.data.slider_text_2)}</p>
               </div>
               <div className="gallery__item">
                 <img
                   src={doc.data.slider_img_3.url}
                   alt={doc.data.slider_img_3.alt}
                 />
-                <p>
-                  {RichText.asText(doc.data.slider_text_3)}
-                </p>
+                <p>{RichText.asText(doc.data.slider_text_3)}</p>
               </div>
             </div>
             <div className="home__slider">

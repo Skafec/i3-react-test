@@ -1,44 +1,44 @@
 .slider {
-    margin-top: 40px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-self: center;
+  margin-top: 40px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-self: center;
 
-    &__left,
-    &__right {
-        position: absolute;
-        z-index: 10;
-        border: none;
-        background-color: transparent;
-        top: 50%;
-        font-size: 28px;
+  &__left,
+  &__right {
+    position: absolute;
+    z-index: 10;
+    border: none;
+    background-color: transparent;
+    top: 50%;
+    font-size: 28px;
+  }
+  &__left {
+    left: 20px;
+  }
+  &__right {
+    right: 20px;
+  }
+  &__data {
+    width: 50vw;
+    p {
+      margin-top: 20px;
+      text-align: center;
     }
-    &__left {
-        left: 20px;
-    }
-    &__right {
-        right: 20px;
-    }
-    &__data {
-        width: 50vw;
-        p {
-            margin-top: 20px;
-            text-align: center;
-        }
-    }
-    &__img {
-        width: 100%;
-    }
+  }
+  &__img {
+    width: 100%;
+  }
 }
 
 .slide {
-    opacity: 0;
-    transform: scale(0.7);
-    transition: all 0.4s ease;
+  opacity: 0;
+  transform: scale(0.7);
+  transition: all 0.4s ease;
 }
 
 .slide.active {
-    opacity: 1;
-    transform: scale(1);
+  opacity: 1;
+  transform: scale(1);
 }

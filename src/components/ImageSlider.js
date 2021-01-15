@@ -29,11 +29,11 @@ const ImageSlider = (props) => {
   // TODO: Refactor this logic in one helper function
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
-  }
+  };
 
   const prevSlide = () => {
     setCurrent(current === 0 ? length - 1 : current - 1);
-  }
+  };
 
   if (!Array.isArray(sliderData) || sliderData.length <= 0) {
     return null;
@@ -50,14 +50,16 @@ const ImageSlider = (props) => {
       {sliderData.map((slide, index) => {
         return (
           // TODO: Refactor this so that active doesn't have to be conditinaly added
-          <div className={index === current ? 'slide active' : 'slide'}
-               key={index}>
-                 {index === current && (
-                   <div className="slider__data">
-                     <img src={slide.img} alt={slide.alt} className="slider__img" />
-                      <p>{RichText.asText(slide.text)}</p>
-                   </div>
-                 )}
+          <div
+            className={index === current ? "slide active" : "slide"}
+            key={index}
+          >
+            {index === current && (
+              <div className="slider__data">
+                <img src={slide.img} alt={slide.alt} className="slider__img" />
+                <p>{RichText.asText(slide.text)}</p>
+              </div>
+            )}
           </div>
         );
       })}
