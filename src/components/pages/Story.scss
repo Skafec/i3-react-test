@@ -1,0 +1,46 @@
+.story {
+    &__title {
+        text-align: center;
+        margin-top: 20px;
+        letter-spacing: 1.5px;
+    }
+    &__img {
+        width: 70vw;
+        margin: 0 auto;
+        img {
+            width: 100%;
+        }
+    }
+    &__text {
+        padding: 0 20px;
+        & > * {
+            margin-bottom: 15px;
+            line-height: 22px;
+        }
+    }
+    .left__gallery {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+    .gallery {
+        &__item {
+            width: 40%;
+            &:last-of-type {
+                display: none;
+            }
+        }
+        &__img {
+            margin: 0 auto;
+            img {
+                width: 100%;
+            }
+        }
+        &__text {
+            line-height: 20px;
+            :first-child {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
