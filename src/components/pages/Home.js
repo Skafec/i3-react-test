@@ -3,18 +3,21 @@ import { fetchPrismicData } from "../../utils/prismicHelpers";
 import { RichText } from "prismic-reactjs";
 import "./Home.scss";
 import ImageSlider from "../ImageSlider";
+import CustomLoader from "../CustomLoader";
 
 function Home() {
   const [doc, setDocData] = React.useState(null);
+  const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    // TODO: Check if this React hook attribute passing is implemented correctly
-    fetchPrismicData(setDocData, "homepage");
+    fetchPrismicData(setDocData, setLoading, "homepage");
   }, []);
 
   return (
     <React.Fragment>
-      {doc ? (
+      {loading ? (
+        <CustomLoader />
+      ) : (
         <div className="home">
           <div className="home__top">
             <div className="home__image">
@@ -57,8 +60,6 @@ function Home() {
             </div>
           </div>
         </div>
-      ) : (
-        <h1>No content</h1>
       )}
     </React.Fragment>
   );

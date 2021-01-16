@@ -2,10 +2,12 @@ import React from "react";
 import { fetchPrismicData } from "../../utils/prismicHelpers";
 import { RichText } from "prismic-reactjs";
 import "./Story.scss";
+import CustomLoader from "../CustomLoader";
 
 function Story() {
   const [doc, setDocData] = React.useState(null);
   const [show, doShow] = React.useState(false);
+  const [loading, setLoading] = React.useState(true);
 
   const elementRef = React.useRef(null);
 
@@ -25,7 +27,7 @@ function Story() {
 
   React.useEffect(() => {
     const fetchDataAndSetUpAnimation = new Promise((resolve) => {
-      fetchPrismicData(setDocData, "story_page");
+      fetchPrismicData(setDocData, setLoading, "story_page");
       if (doc != null) {
         resolve(true);
       }
@@ -36,7 +38,9 @@ function Story() {
 
   return (
     <React.Fragment>
-      {doc ? (
+      {loading ? (
+        <CustomLoader />
+      ) : (
         <div className="story">
           <div className="story__left">
             <div className="story__title">
@@ -95,8 +99,6 @@ function Story() {
             </div>
           </div>
         </div>
-      ) : (
-        <h1>No content</h1>
       )}
     </React.Fragment>
   );
