@@ -26,7 +26,6 @@ const ImageSlider = (props) => {
   const [current, setCurrent] = React.useState(0);
   const length = sliderData.length;
 
-  // TODO: Refactor this logic in one helper function
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
   };
@@ -49,9 +48,8 @@ const ImageSlider = (props) => {
       </button>
       {sliderData.map((slide, index) => {
         return (
-          // TODO: Refactor this so that active doesn't have to be conditinaly added
           <div
-            className={index === current ? "slide active" : "slide"}
+            className={`slide ${index === current ? "active" : ""}`}
             key={index}
           >
             {index === current && (

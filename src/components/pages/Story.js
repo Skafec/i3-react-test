@@ -5,23 +5,18 @@ import "./Story.scss";
 
 function Story() {
   const [doc, setDocData] = React.useState(null);
-  const [show, doShow] = React.useState({
-    itemOne: false,
-  });
+  const [show, doShow] = React.useState(false);
 
-  // TODO: Refactor names of variables for only one element
-  const firstElementRef = React.useRef(null);
+  const elementRef = React.useRef(null);
 
   const setUpAnimations = () => {
     const topPosition = (element) => element.getBoundingClientRect().top;
 
-    const firstElementPosition = topPosition(firstElementRef.current);
+    const elementPosition = topPosition(elementRef.current);
 
     const onScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight;
-      if (firstElementPosition < scrollPosition) {
-        doShow((state) => ({ ...state, itemOne: true }));
-      }
+      if (elementPosition < scrollPosition - 200) doShow(true);
     };
 
     window.addEventListener("scroll", onScroll);
@@ -61,8 +56,8 @@ function Story() {
               {RichText.render(doc.data.main_content)}
             </div>
             <div
-              className={`left__gallery ${show.itemOne ? "animate" : ""}`}
-              ref={firstElementRef}
+              className={`left__gallery ${show ? "animate" : ""}`}
+              ref={elementRef}
             >
               <div className="gallery__item">
                 <div className="gallery__img">
