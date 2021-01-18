@@ -18,7 +18,7 @@ function Story() {
 
     const onScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight;
-      if (elementPosition < scrollPosition - 200) doShow(true);
+      if (elementPosition < scrollPosition - 300) doShow(true);
     };
 
     window.addEventListener("scroll", onScroll);
