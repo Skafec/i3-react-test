@@ -7,8 +7,10 @@ export const fetchPrismicData = (setDocData, setLoading, pageName) => {
       Prismic.Predicates.at("document.type", pageName)
     );
     if (response) {
-      setDocData(response.results[0]);
-      setLoading(false);
+      setTimeout(() => {
+        setDocData(response.results[0]);
+        setLoading(false);
+      }, 800);
     }
   };
   fetchData();

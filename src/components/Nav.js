@@ -94,7 +94,7 @@ function App() {
           <Route path="/story">
             <Story />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <Home />
           </Route>
         </Switch>
